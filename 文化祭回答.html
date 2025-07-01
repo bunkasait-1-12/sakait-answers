@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>【SAKAIT】真実の間</title>
+  <style>
+    .image-row {
+  display: flex;
+  gap: 12px;
+  margin: 15px 0;
+}
+
+.image-row img {
+  width: 100px;
+  height: auto;
+  border-radius: 6px;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
+  object-fit: cover;
+}
+
+    .fade-in-text {
+  opacity: 0;
+  animation: fadeIn 4s ease-out forwards;
+  animation-delay: 1s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+    letter-spacing: 0.05em;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    letter-spacing: 0.1em;
+  }
+}
+
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@500&display=swap');
+
+    body {
+      font-family: 'Noto Serif JP', serif;
+      background-color: #121212;
+      color: #e0e0e0;
+      margin: 0;
+      padding: 20px;
+      line-height: 1.8;
+      background-image: linear-gradient(to bottom, #111 0%, #1c1c1c 100%);
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    h1 {
+      font-size: 2em;
+      color: #d32f2f;
+      text-shadow: 0 0 8px #b71c1c;
+    }
+
+    .subtitle {
+      font-size: 1em;
+      color: #aaa;
+    }
+
+    .answer-section {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 20px;
+      margin-bottom: 30px;
+      border-left: 5px solid #d32f2f;
+      border-radius: 8px;
+      box-shadow: 0 0 12px rgba(255, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .answer-section:hover {
+      transform: scale(1.01);
+    }
+
+    .answer-section h2 {
+      margin-top: 0;
+      color: #ffffff;
+      font-size: 1.5em;
+      border-bottom: 1px solid #333;
+      padding-bottom: 4px;
+    }
+
+    .answer {
+      font-weight: bold;
+      font-size: 1.4em;
+      color: #f39c12;
+    }
+
+    .explanation {
+      margin-top: 10px;
+      color: #dddddd;
+    }
+
+    footer {
+      margin-top: 60px;
+      text-align: center;
+      font-size: 0.9em;
+      color: #777;
+    }
+
+    footer::before {
+      content: "──────";
+      display: block;
+      margin-bottom: 10px;
+      color: #444;
+    }
+    .image-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.image-list img {
+  width: 300px; /* 大きさ調整。必要に応じて 400px などにも変更OK */
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 0 300px rgba(255, 255, 255, 0.2);
+}
+.image-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  margin-top: 30px;
+  padding: 0 10px;
+}
+
+.image-list img {
+  width: 100%;         /* 親要素の幅いっぱいに広がる */
+  max-width: 800px;    /* ただし最大800pxまでに制限 */
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+footer {
+  margin-top: 60px;
+  text-align: center;
+  font-size: 0.9em;
+  color: #999;
+  font-style: italic;
+}
+.corner-image {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  width: 80px;
+  opacity: 0.3;
+  z-index: 9999;
+  cursor: pointer;
+  filter: blur(2px) brightness(0.5);
+  transition: filter 0.5s ease, opacity 0.5s ease;
+}
+
+/* 鮮明化されたときのスタイル */
+.corner-image.revealed {
+  filter: blur(0) brightness(1);
+  opacity: 1;
+}
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>真実の間 - SAKAIT</h1>
+    <p class="subtitle fade-in-text">……すべての真実は、ここに記されている。</p>
+
+  </header>
+
+  <div class="answer-section">
+    <h2>第1問の答え</h2>
+    <div class="answer">①．ん</div>
+    <div class="explanation">
+      <p>一見横に読む文章に見えますが、縦に読むと意味が分かります。</p>
+      <p>この曲の作者は、第一子を一週間ほどで亡くしました。</p>
+      <p>その後作られたのが、この「シャボン玉」という曲です。</p>
+    </div>
+  </div>
+
+  <div class="answer-section">
+    <h2>第2問の答え</h2>
+    <div class="answer">真実ではない</div>
+    <div class="explanation">
+      <p>同じ坂でも、下から見ると上り坂、上から見ると下り坂になるので、上り坂と下り坂の数は同じです。</p>
+      <p>よって、下り坂より上り坂のほうが多いという文章は真実ではありません。</p>
+    </div>
+  </div>
+
+  <div class="answer-section">
+    <h2>第3問の答え</h2>
+    <div class="answer">②．8</div>
+    <div class="explanation">
+      <p>数字を図形として捉えると、6，9，0には丸が一つ、8には丸が二つあります。その合計が右の数字になります。</p>
+      <p>8888は丸が8つあるので答えは8になります。</p>
+    </div>
+  </div>
+
+  <div class="image-list">
+    <img src="文化祭一問目.jpeg" alt="第一問" />
+    <img src="文化祭二問目.jpeg" alt="第二問" />
+    <img src="文化祭三問目.jpeg" alt="第三問" />
+  </div>
+
+
+  <footer>
+    &copy; 2025 1-12 SAKAIT制作委員会. All Rights Reserved.
+  </footer>
+<img src="sakait.jpg" id="glitch-trigger" class="corner-image"  />
+
+
+<script>
+  const glitchTrigger = document.getElementById("glitch-trigger");
+
+  glitchTrigger.addEventListener("click", () => {
+    // 画像を鮮明にする
+    glitchTrigger.classList.add("revealed");
+
+    // 文字をずっと文字化けさせる処理
+    const body = document.body;
+
+    function scrambleText(text) {
+      const chars = "▒◼︎█＠〓※▓☠Ξ∴■▣◆✖︎⍰";
+      return text.replace(/[\wぁ-んァ-ン一-龯]/g, () => {
+        return chars[Math.floor(Math.random() * chars.length)];
+      });
+    }
+
+    function scrambleLoop(node) {
+      if (node.nodeType === 3) {
+        const original = node.textContent;
+        setInterval(() => {
+          node.textContent = scrambleText(original);
+        }, 100);
+      } else {
+        for (let child of node.childNodes) {
+          scrambleLoop(child);
+        }
+      }
+    }
+
+    scrambleLoop(body);
+  });
+</script>
+
+
+</body>
+</html>
