@@ -225,11 +225,10 @@ footer {
 
     // 画像を鮮明にする
     glitchTrigger.classList.add("revealed");
-
-    // 背景を血の画像に変更
-    document.body.style.backgroundImage = "url('blood.jpeg')";
-    document.body.style.backgroundSize = "cover";
-    document.body.style.backgroundPosition = "center";
+// 背景を血の画像に変更（絶対パスに修正）
+document.body.style.backgroundImage = "url('https://bunkasait-1-12.github.io/sakait-answers/blood.jpeg')";
+document.body.style.backgroundSize = "cover";
+document.body.style.backgroundPosition = "center";
 
     // 文字をずっと文字化けさせる処理
     const body = document.body;
