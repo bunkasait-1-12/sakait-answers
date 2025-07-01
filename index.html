@@ -218,40 +218,47 @@ footer {
 <img src="sakait.jpg" id="glitch-trigger" class="corner-image"  />
 
 <script>
-  const glitchTrigger = document.getElementById("glitch-trigger");
+  document.addEventListener("DOMContentLoaded", () => {
+    const glitchTrigger = document.getElementById("glitch-trigger");
+    let scrambleStarted = false;  // 一度だけスクランブル開始のフラグ
 
-  glitchTrigger.addEventListener("click", () => {
-    glitchTrigger.classList.add("revealed");
+    glitchTrigger.addEventListener("click", () => {
+      glitchTrigger.classList.add("revealed");
 
-    // ✅ 絶対パスで背景変更
-    document.body.style.setProperty("background-image", "url('https://bunkasait-1-12.github.io/sakait-answers/blood.jpeg')", "important");
-    document.body.style.backgroundSize = "cover";
-    document.body.style.backgroundPosition = "center";
-    document.body.style.backgroundRepeat = "no-repeat";
+      // 背景画像を強制上書き
+      document.body.style.setProperty(
+        "background-image",
+        "url('https://bunkasait-1-12.github.io/sakait-answers/blood.jpeg')",
+        "important"
+      );
+      document.body.style.backgroundSize = "cover";
+      document.body.style.backgroundPosition = "center";
+      document.body.style.backgroundRepeat = "no-repeat";
 
-    const body = document.body;
+      if (!scrambleStarted) {
+        scrambleStarted = true;
 
-    function scrambleText(text) {
-      const chars = "▒◼︎█＠〓※▓☠Ξ∴■▣◆✖︎⍰";
-      return text.replace(/[\wぁ-んァ-ン一-龯]/g, () => {
-        return chars[Math.floor(Math.random() * chars.length)];
-      });
-    }
-
-    function scrambleLoop(node) {
-      if (node.nodeType === 3) {
-        const original = node.textContent;
-        setInterval(() => {
-          node.textContent = scrambleText(original);
-        }, 100);
-      } else {
-        for (let child of node.childNodes) {
-          scrambleLoop(child);
+        function scrambleText(text) {
+          const chars = "▒◼︎█＠〓※▓☠Ξ∴■▣◆✖︎⍰";
+          return text.replace(/[\wぁ-んァ-ン一-龯]/g, () => {
+            return chars[Math.floor(Math.random() * chars.length)];
+          });
         }
-      }
-    }
 
-    scrambleLoop(body);
+        function scrambleLoop(node) {
+          if (node.nodeType === 3) {
+            const original = node.textContent;
+            setInterval(() => {
+              node.textContent = scrambleText(original);
+            }, 100);
+          } else {
+            node.childNodes.forEach(child => scrambleLoop(child));
+          }
+        }
+
+        scrambleLoop(document.body);
+      }
+    });
   });
 </script>
 
